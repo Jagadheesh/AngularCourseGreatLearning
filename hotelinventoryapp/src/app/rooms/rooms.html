@@ -19,11 +19,13 @@
         <th>Room Type</th>
         <th>Photo</th>
         <th>Is Booked</th>
-        <th>Price Per Month</th>
+        <th>PricePerMonth</th>
     </tr>
 <tr *ngFor="let room of roomList">
     <td>{{room.RoomNumber}}</td>
     <td>{{room.RoomType}}</td>
+    <td>{{room.photo}}</td>
+    <td>{{room.isBooked}}</td>
     <td>{{room.PricePerMonth | currency:'USD':'symbol':'1.2-2'}}</td>
     </tr>
 </table>
