@@ -28,8 +28,8 @@ console.log(Emp);
 let modifiedElem = elem.filter((em)=>{return em > 2})
 console.log(modifiedElem)
 
-let n = elem.find((e)=> e==2);
-console.log(n);
+// let n = elem.find((e)=> e==2);
+// console.log(n);
 
 let sum = elem.reduce((acc,cur)=> acc+cur);
 console.log(sum);

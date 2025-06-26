@@ -1,33 +1,32 @@
-"use strict";
-let fname = 'John Doe';
-let newname = fname.toUpperCase();
+var fname = 'John Doe';
+var newname = fname.toUpperCase();
 console.log(newname);
 //integer and float will be treated as number in typescript
-let num = 10;
+var num = 10;
 num = 10.5;
 console.log(num);
 //Converting string to number
-let Num = "25";
-let age = parseInt(Num);
+var Num = "25";
+var age = parseInt(Num);
 console.log(age);
 //boolean
-let isActive = false;
+var isActive = false;
 console.log(isActive);
 //Array
-let Emp = ['emp1', 'emp2', 'emp3'];
-let elem;
+var Emp = ['emp1', 'emp2', 'emp3'];
+var elem;
 elem = [1, 2, 3, 4, 5];
 console.log(Emp);
 //filter data
-let modifiedElem = elem.filter((em) => { return em > 2; });
+var modifiedElem = elem.filter(function (em) { return em > 2; });
 console.log(modifiedElem);
-let n = elem.find((e) => e == 2);
-console.log(n);
-let sum = elem.reduce((acc, cur) => acc + cur);
+// let n = elem.find((e)=> e==2);
+// console.log(n);
+var sum = elem.reduce(function (acc, cur) { return acc + cur; });
 console.log(sum);
-let color = 1 /* Colors.Green */;
+var color = 1 /* Colors.Green */;
 //Tuples
-let swapNum;
+var swapNum;
 function swap(f, s) {
     return [s, f];
 }
@@ -35,7 +34,7 @@ swapNum = swap(10, 20);
 swapNum[0];
 console.log(swapNum[1]);
 //any
-let data;
+var data;
 data = 10;
 data = "Hello";
 console.log(data);
