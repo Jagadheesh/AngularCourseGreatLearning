@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Rooms } from "./rooms/rooms";
+import { CommonModule } from '@angular/common';
 // import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -7,7 +8,7 @@ import { Rooms } from "./rooms/rooms";
   // imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  imports: [Rooms],
+  imports: [Rooms,CommonModule],
   // styles : [`
   //   h1{
   //     color: blue;
@@ -16,4 +17,5 @@ import { Rooms } from "./rooms/rooms";
 })
 export class App {
   protected title = 'hotelinventoryapp';
+  role = "admin";
 }

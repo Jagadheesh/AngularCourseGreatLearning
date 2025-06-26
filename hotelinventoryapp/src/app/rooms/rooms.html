@@ -4,31 +4,22 @@
 <!-- // Property Binding -->
 <div [hidden]="isVisible">
     <h2>Details about Rooms</h2>
-<p [innerText]="NoOfRooms + ' Rooms Available'"> Hello World</p>
 </div>
 
+<!-- //ng Style Example -->
+ <div [ngStyle]="NoOfRooms <= 100 ? {'color': 'green', 'font-size': '20px'} : {'color': 'red', 'font-size': '16px'}">
+        <P>Hello , World</P>
+    </div>
 <!-- // Event Binding    -->
 <button (click)="toggle()">Toggle</button>
 
 <!-- Null Value Handling -->
 <!-- {{rooms.AvailableRooms ?? 'No Rooms Available'}} -->
 <!-- // *ngIf Directive Example of *ngIf directive -->
-<table>
-    <tr>
-        <th>Room Number</th>
-        <th>Room Type</th>
-        <th>Photo</th>
-        <th>Is Booked</th>
-        <th>PricePerMonth</th>
-    </tr>
-<tr *ngFor="let room of roomList">
-    <td>{{room.RoomNumber}}</td>
-    <td>{{room.RoomType}}</td>
-    <td>{{room.photo}}</td>
-    <td>{{room.isBooked}}</td>
-    <td>{{room.PricePerMonth | currency:'USD':'symbol':'1.2-2'}}</td>
-    </tr>
-</table>
+
+ <!-- {{roomList | json}} -->
+<app-rooms-list [rooms]="roomList"></app-rooms-list>
 <div *ngIf = "rooms?.AvailableRooms">
     {{rooms.AvailableRooms}} Rooms Available
 </div>
+

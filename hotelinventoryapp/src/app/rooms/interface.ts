@@ -10,4 +10,6 @@ export interface RoomList{
     photo : string;
     isBooked : boolean;
     PricePerMonth : number;
+    InCheckTime? : Date;
+    Rating? : number;
 }
