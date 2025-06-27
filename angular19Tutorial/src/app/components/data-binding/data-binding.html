@@ -1,0 +1,42 @@
+<button class="btn btn-primary" (click)="navigateToAdmin()">Go to Admin</button>
+<div class="row">
+    <div class="col-6">
+        <P>Interpolation Example:</P>
+        <P>FirstName  =>  {{firstName}}</P>
+    </div>
+    <div class="col-6">
+        <input type="text" [value] = "firstName" />
+        <div [class]="newDivClass" style="height: 100px; width: 100px;  ">
+            hi
+        </div>   
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button type="button" class="btn btn-success" (click)="onClickMessage()">
+                Click Me!
+            </button>
+        </div>
+        <div class="col-3">
+            <select (change)="onChangeMessage()">
+                <option value="1">Tamil Nadu</option>
+                <option value="2">Mumbai</option>
+                <option value="3">Kerala</option>
+                <option value="4">Karnataka</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3" >
+        <input type="text" [(ngModel)]="firstName">
+    </div>
+    <div class="col-3">
+        <select  [(ngModel)]="selectedOption">
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Karnataka">Karnataka</option>
+        </select>
+        -{{selectedOption}}
+    </div>
+</div>
