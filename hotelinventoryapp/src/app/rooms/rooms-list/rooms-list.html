@@ -1,5 +1,6 @@
 <p>rooms-list works!</p>
 <table class="table table-striped">
+    <thead>
     <tr [ngStyle]="{'background-color': '#f0f0f9'}">
         <th>Even/Odd</th>
         <th>Room Number</th> 
@@ -10,9 +11,11 @@
         <th>In Check Time</th>
         <th>Ratings</th>
     </tr>
+     </thead>
 
     <!-- Pipes -->
      <!-- | slice: 0:2 -->
+    <tbody>
 <tr [ngClass]= "e ? 'even' : 'odd'" *ngFor="let room of rooms ; let e = even ; let o = odd;">
     <td>{{e ? 'Even' : 'Odd'}}</td>
     <td>{{room.RoomNumber}}</td>
@@ -23,4 +26,5 @@
     <td>{{room.InCheckTime | date : 'dd/MMM/yyyy'}}</td>
     <td>{{room.Rating | number : '1.1-3'}}</td>
     </tr>
+    </tbody>
 </table>
