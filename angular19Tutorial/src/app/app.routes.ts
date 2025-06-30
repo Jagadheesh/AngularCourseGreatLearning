@@ -6,29 +6,43 @@ import { DataBinding } from './components/data-binding/data-binding';
 import { Admin } from './components/admin/admin';
 import { TemplateForm } from './components/template-form/template-form';
 import { LinkedSignal } from './components/linked-signal/linked-signal';
+import { Login } from './components/login/login';
+import { Layout } from './components/layout/layout';
 export const routes: Routes = [
     {
         path: '',
-        component: Home,
+        redirectTo : 'login',
+        pathMatch : 'full'
     },
     {
-        path: 'admin',
-        component: Admin,
+        path: 'login',
+        component:Login
     },
     {
-        path: 'signal',
-        component : Signal,
+        path : '',
+        component : Layout,
+        children: [
+                    {
+                path: 'admin',
+                component: Admin,
+            },
+            {
+                path: 'signal',
+                component : Signal,
+            },
+            {
+                path: 'data-binding',
+                component: DataBinding,
+            },
+            {
+                path: 'template-form',
+                component : TemplateForm,
+            },
+            {
+                path: 'linked-signal',
+                component: LinkedSignal,
+            }
+        ]
     },
-    {
-        path: 'data-binding',
-        component: DataBinding,
-    },
-    {
-        path: 'template-form',
-        component : TemplateForm,
-    },
-    {
-        path: 'linked-signal',
-        component: LinkedSignal,
-    }
+    
 ];
