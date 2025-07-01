@@ -11,49 +11,43 @@ import { GetApi } from './components/API/get-api/get-api';
 import { PostApi } from './components/API/post-api/post-api';
 import { LifeCycle } from './components/API/life-cycle/life-cycle';
 import { Tabs } from './components/reusable/tabs/tabs';
+import { Login } from './components/login/login';
+import { Layout } from './components/layout/layout';
 export const routes: Routes = [
     {
         path: '',
-        component: Home,
+        redirectTo : 'login',
+        pathMatch : 'full'
     },
     {
-        path: 'admin',
-        component: Admin,
+        path: 'login',
+        component:Login
     },
     {
-        path: 'signal',
-        component : Signal,
+        path : '',
+        component : Layout,
+        children: [
+                    {
+                path: 'admin',
+                component: Admin,
+            },
+            {
+                path: 'signal',
+                component : Signal,
+            },
+            {
+                path: 'data-binding',
+                component: DataBinding,
+            },
+            {
+                path: 'template-form',
+                component : TemplateForm,
+            },
+            {
+                path: 'linked-signal',
+                component: LinkedSignal,
+            }
+        ]
     },
-    {
-        path: 'data-binding',
-        component: DataBinding,
-    },
-    {
-        path: 'template-form',
-        component : TemplateForm,
-    },
-    {
-        path: 'linked-signal',
-        component: LinkedSignal,
-    },
-    {
-        path: 'reactive-form',
-        component: ReactiveForm,
-    },
-    {
-        path: 'get-api',
-        component:GetApi,
-    },
-    {
-        path: 'post-api',
-        component: PostApi,
-    },
-    {
-        path: 'life-cycle',
-        component: LifeCycle,
-    },
-    {
-        path: 'tabs',
-        component: Tabs,
-    }
+    
 ];
