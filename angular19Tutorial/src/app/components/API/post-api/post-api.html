@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <h2>POST API Integration using Template Form</h2>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-success" (click)="getAllCars()">Load Cars</button>
+    </div>
+</div>
+
+<div class="row pt-2">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-earning">
+                <h5>Car List</h5>
+            </div>
+            <div class="car-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>S.NO</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Reg No</th>
+                            <th>Daily Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let car of carList; let i = index;">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ car.brand }}</td>
+                            <td>{{ car.model }}</td>
+                            <td>{{ car.regNo }}</td>
+                            <td>{{ car.dailyRate }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

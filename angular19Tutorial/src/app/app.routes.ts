@@ -1,3 +1,4 @@
+import { ReactiveForm } from './components/reactive-form/reactive-form';
 import { Routes } from '@angular/router';
 import { Signal } from './components/signal/signal';
 import { App } from './app';
@@ -6,6 +7,10 @@ import { DataBinding } from './components/data-binding/data-binding';
 import { Admin } from './components/admin/admin';
 import { TemplateForm } from './components/template-form/template-form';
 import { LinkedSignal } from './components/linked-signal/linked-signal';
+import { GetApi } from './components/API/get-api/get-api';
+import { PostApi } from './components/API/post-api/post-api';
+import { LifeCycle } from './components/API/life-cycle/life-cycle';
+import { Tabs } from './components/reusable/tabs/tabs';
 export const routes: Routes = [
     {
         path: '',
@@ -30,5 +35,25 @@ export const routes: Routes = [
     {
         path: 'linked-signal',
         component: LinkedSignal,
+    },
+    {
+        path: 'reactive-form',
+        component: ReactiveForm,
+    },
+    {
+        path: 'get-api',
+        component:GetApi,
+    },
+    {
+        path: 'post-api',
+        component: PostApi,
+    },
+    {
+        path: 'life-cycle',
+        component: LifeCycle,
+    },
+    {
+        path: 'tabs',
+        component: Tabs,
     }
 ];

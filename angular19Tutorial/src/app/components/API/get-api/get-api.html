@@ -1,0 +1,35 @@
+<p>get-api works!</p>
+<div class="row">
+    <div class="col-3">
+        <button (click)="getUsers()" class="btn btn-success">Get Users</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ng-container *ngIf="userList?.length; else noUsers">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Website</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList; let i = index">
+                        <td>{{ user?.name || '-' }}</td>
+                        <td>{{ user?.email || '-' }}</td>
+                        <td>{{ user?.phone || '-' }}</td>
+                        <td>{{ user?.website || '-' }}</td>
+                        <td>{{ user.website }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <ng-template #noUsers>
+            <div class="alert alert-info mt-3">No users found.</div>
+        </ng-template>
+    </div>
+</div>
